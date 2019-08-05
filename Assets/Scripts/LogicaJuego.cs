@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class LogicaJuego : NetworkBehaviour {
 
 	public GameObject[] monedas;
-	public GameObject moneda;
 
 	public static LogicaJuego instancia;
 
@@ -17,7 +16,7 @@ public class LogicaJuego : NetworkBehaviour {
 	public static int puntuacion;
 	public static bool nivelCompleto;
 	public static bool tiempoAgotado;
-	public static bool puedo_inicializar = false;
+
 
 	//Mensajes del canvas
 	public Text puntos;
@@ -44,11 +43,6 @@ public class LogicaJuego : NetworkBehaviour {
 
 	void Update()
 	{
-		if (puedo_inicializar) {
-			Debug.Log ("instanciando monedas");
-			instanciarMonedas (moneda);
-			puedo_inicializar = false;
-		}
 				
 		//Mostramos la puntuación
 		puntos.text = "PUNCIACIÓN: " + puntuacion;
@@ -89,18 +83,7 @@ public class LogicaJuego : NetworkBehaviour {
 			mostrarNivelFallido ();
 		}
 	}
-
-	public void instanciarMonedas(GameObject moneda){
-		//Nuevo punto aleatorio
-		for(int i=0;i<5;i++){
-			Vector2 randonPoint1 = new Vector2(Random.Range(-11.25f,14.86f),Random.Range(-2.66f,7.53f));
-			monedas[i] = (GameObject) Instantiate(moneda, randonPoint1, Quaternion.identity);
-			NetworkServer.Spawn(monedas[i]);
-		}
-		monedas [2].SetActive (false);
-		monedas [3].SetActive (false);
-		monedas [4].SetActive (false);
-	}
+		
 
 	public void comprobarNivelCompletado()
 	{

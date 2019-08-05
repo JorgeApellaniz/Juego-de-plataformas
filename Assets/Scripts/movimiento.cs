@@ -44,7 +44,9 @@ public class movimiento : NetworkBehaviour {
 
 		escalaActual = gameObject.transform.localScale;
 
-		if (Input.GetKey (KeyCode.RightArrow) && LogicaJuego.tiempoAgotado == false && LogicaJuego.nivelCompleto == false) {
+		if (Input.GetKey (KeyCode.RightArrow) 
+			//&& LogicaJuego.tiempoAgotado == false 
+			&& LogicaJuego.nivelCompleto == false) {
 			//Para cambiar de sentido al sprite se le cambia el signo a la escala
 			if (escalaActual == derScale) {
 				gameObject.transform.localScale = izqScale;
@@ -54,7 +56,9 @@ public class movimiento : NetworkBehaviour {
 			r2d.AddForce (mov * Time.deltaTime);
 			anim.SetFloat ("velocidad", 1f);
 			anim.SetInteger ("saltando", 0);
-		} else if (Input.GetKey (KeyCode.LeftArrow) && LogicaJuego.tiempoAgotado == false && LogicaJuego.nivelCompleto == false) {
+		} else if (Input.GetKey (KeyCode.LeftArrow) 
+//			&& LogicaJuego.tiempoAgotado == false 
+			&& LogicaJuego.nivelCompleto == false) {
 
 			if (escalaActual == izqScale) {
 				gameObject.transform.localScale = derScale;
@@ -69,7 +73,9 @@ public class movimiento : NetworkBehaviour {
 		{
 			anim.SetFloat ("velocidad", 0f);
 		}
-		if (Input.GetKeyDown (KeyCode.UpArrow) && salto == false && LogicaJuego.tiempoAgotado == false && LogicaJuego.nivelCompleto == false) {		// Para que se compruebe por separado
+		if (Input.GetKeyDown (KeyCode.UpArrow) && salto == false 
+			//&& LogicaJuego.tiempoAgotado == false 
+			&& LogicaJuego.nivelCompleto == false) {		// Para que se compruebe por separado
 			r2d.AddForce (Vector2.up * 350.0f * Time.deltaTime, ForceMode2D.Impulse);
 			// Actualizar estado de la animación si fuese necesario
 			anim.SetInteger ("saltando", 1);

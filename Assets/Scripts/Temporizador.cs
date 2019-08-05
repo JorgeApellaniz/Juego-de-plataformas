@@ -23,8 +23,6 @@ public class Temporizador : NetworkBehaviour {
 			tiempo -= Time.deltaTime;
 			contador.text = " " + tiempo.ToString ("f0");
 			bonus (tiempo);
-			if (tiempo.Equals(57))
-				LogicaJuego.puedo_inicializar = true;
 
 		} else {
 			contador.text = "Tiempo agotado";
