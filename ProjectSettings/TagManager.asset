@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - jugador
+  - limite
+  - cofre
+  - enemigo
+  - pincho
+  - bonusDisparo
+  - plataforma
+  - moneda
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - jugador
+  - moneda
+  - bala
+  - cofre
+  - pinchos
+  - pajaro
+  - caja
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: fondo
+    uniqueID: 3281878051
+    locked: 0
+  - name: "monta\xF1as"
+    uniqueID: 760276719
+    locked: 0
+  - name: frente
+    uniqueID: 1187069721
+    locked: 0
+  - name: Elementos
+    uniqueID: 489655063
+    locked: 0
