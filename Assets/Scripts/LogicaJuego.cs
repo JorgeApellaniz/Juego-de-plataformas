@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class LogicaJuego : NetworkBehaviour {
 
 	public GameObject[] monedas;
+	public GameObject cerradura;
+	public GameObject llavePrefab;
+	public GameObject cofrePrefab;
 
 	public static LogicaJuego instancia;
 
@@ -16,6 +19,8 @@ public class LogicaJuego : NetworkBehaviour {
 	public static int puntuacion;
 	public static bool nivelCompleto;
 	public static bool tiempoAgotado;
+	public static bool puerta_completada = false;
+
 
 
 	//Mensajes del canvas
@@ -71,6 +76,21 @@ public class LogicaJuego : NetworkBehaviour {
 		{
 			desaparece_moneda = false;
 
+		}
+			
+		if (puntuacion == 5) {
+			puerta_completada = true;
+			puntuacion = 10;
+		}
+
+		//Cuando la puerta esté completada hacemos visible la cerradura y se instancia la llave en una posicion aleatoria
+		if (puerta_completada) {
+			cerradura.SetActive (true);
+			Vector2 posAleatoria_llave = new Vector2 (Random.Range (-14f, 8.5f), Random.Range (-3f, 5.25f));
+			var llave = Instantiate (llavePrefab, posAleatoria_llave, Quaternion.identity);
+			NetworkServer.Spawn (llave);
+			cofrePrefab.SetActive (false);
+			puerta_completada = false;
 		}
 			
 		//comprobarNivelCompletado ();
