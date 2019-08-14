@@ -12,6 +12,7 @@ TagManager:
   - bonusDisparo
   - plataforma
   - moneda
+  - llave
   layers:
   - Default
   - TransparentFX

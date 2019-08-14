@@ -20,6 +20,7 @@ public class LogicaJuego : NetworkBehaviour {
 	public static bool nivelCompleto;
 	public static bool tiempoAgotado;
 	public static bool puerta_completada = false;
+	public static bool puerta_desbloqueada = false;
 
 
 
@@ -93,7 +94,7 @@ public class LogicaJuego : NetworkBehaviour {
 			puerta_completada = false;
 		}
 			
-		//comprobarNivelCompletado ();
+		comprobarNivelCompletado ();
 		//tiempoTerminado ();
 	}
 		
@@ -107,10 +108,9 @@ public class LogicaJuego : NetworkBehaviour {
 
 	public void comprobarNivelCompletado()
 	{
-		GameObject[] mon;
-		mon = GameObject.FindGameObjectsWithTag ("moneda");
+		GameObject[] jugadores = GameObject.FindGameObjectsWithTag("jugador");
 		//Debug.Log ("Quedan " + mon.Length + " monedas");
-		if (mon.Length == 0) {
+		if (jugadores.Length == 0) {
 			mostrarNivelCompleto ();
 		}
 	}

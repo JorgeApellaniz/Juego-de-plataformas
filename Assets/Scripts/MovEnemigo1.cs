@@ -6,7 +6,6 @@ using UnityEngine.Networking;
 public class MovEnemigo1 : NetworkBehaviour {
 
 	private Rigidbody2D r2d;
-	private Transform tr;
 
 	public int segundosSalto;
 	private bool timerReached;
@@ -17,7 +16,6 @@ public class MovEnemigo1 : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
 		r2d = GetComponent<Rigidbody2D> ();
-		tr = GetComponent<Transform> ();
 	}
 	
 	// Update is called once per frame

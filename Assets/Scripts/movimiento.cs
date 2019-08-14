@@ -7,7 +7,6 @@ public class movimiento : NetworkBehaviour {
 
 	public Vector2 mov;
 	private Animator anim;
-	private SpriteRenderer sprite;
 	private Rigidbody2D r2d;
 
 	private float tiempoDeDisparo;
@@ -27,7 +26,6 @@ public class movimiento : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
-		sprite = GetComponent<SpriteRenderer> ();
 		r2d = GetComponent<Rigidbody2D> ();
 		izqScale = new Vector3 (1, 1, 1);
 		derScale = new Vector3 (-1, 1, 1);
