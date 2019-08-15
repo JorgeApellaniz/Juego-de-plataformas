@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212316512834126622}
   - component: {fileID: 60624015321338640}
   - component: {fileID: 114998353740868094}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: plataforma1_oculta
   m_TagString: Untagged
   m_Icon: {fileID: 0}

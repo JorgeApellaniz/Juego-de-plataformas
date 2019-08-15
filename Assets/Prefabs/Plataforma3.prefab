@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4334554777381792}
   - component: {fileID: 212212001686820590}
   - component: {fileID: 60809175035604936}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Plataforma3
   m_TagString: plataforma
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4929996429400398}
   - component: {fileID: 212884683799416078}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: tiles_spritesheet_94
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4792065746791466}
   - component: {fileID: 212042253741051500}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: tiles_spritesheet_118
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509624063741674}
   - component: {fileID: 212361192308804276}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: tiles_spritesheet_105
   m_TagString: Untagged
   m_Icon: {fileID: 0}
