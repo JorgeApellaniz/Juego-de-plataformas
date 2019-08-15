@@ -45,27 +45,27 @@ public class movimiento : NetworkBehaviour {
 		if (Input.GetKey (KeyCode.RightArrow) 
 			//&& LogicaJuego.tiempoAgotado == false 
 			&& LogicaJuego.nivelCompleto == false) {
-			//Para cambiar de sentido al sprite se le cambia el signo a la escala
-			if (escalaActual == derScale) {
-				gameObject.transform.localScale = izqScale;
-			}
 
 			mov = new Vector2 (400.0f, 0);
 			r2d.AddForce (mov * Time.deltaTime);
+
+			// Animación
 			anim.SetFloat ("velocidad", 1f);
 			anim.SetInteger ("saltando", 0);
+			anim.SetInteger ("direccion", 0);
+
 		} else if (Input.GetKey (KeyCode.LeftArrow) 
 //			&& LogicaJuego.tiempoAgotado == false 
 			&& LogicaJuego.nivelCompleto == false) {
 
-			if (escalaActual == izqScale) {
-				gameObject.transform.localScale = derScale;
-			}
 
 			mov = new Vector2 (-400.0f, 0);
 			r2d.AddForce (mov * Time.deltaTime);
+
+			// Animación
 			anim.SetFloat ("velocidad", 1f);
 			anim.SetInteger ("saltando", 0);
+			anim.SetInteger ("direccion", 1);
 		} 
 		else 
 		{
@@ -80,15 +80,15 @@ public class movimiento : NetworkBehaviour {
 			salto = true;
 
 		}
-		if (Input.GetKeyDown (KeyCode.Space) && LogicaJuego.puede_disparar && LogicaJuego.tiempoAgotado == false && LogicaJuego.nivelCompleto == false) {		// Para que se compruebe por separado
+
+		// Para que se compruebe por separado
+		if (Input.GetKeyDown (KeyCode.Space) && LogicaJuego.puede_disparar && LogicaJuego.tiempoAgotado == false && LogicaJuego.nivelCompleto == false) {		
 
 			CmdFire (escalaActual);
 		}
 
 		if(LogicaJuego.puede_disparar)
 		calculoTiempo (tiempoDeDisparo);
-
-		//Ponemos por defecto el cofre cerrado
 
 	}
 
