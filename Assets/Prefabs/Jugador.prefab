@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61753285208874902}
   - component: {fileID: 114040440808095242}
   - component: {fileID: 114473777474652988}
+  - component: {fileID: 114504468248869888}
   - component: {fileID: 114648512286073560}
   - component: {fileID: 114254937658264662}
   - component: {fileID: 114361855470009368}
@@ -187,6 +188,25 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114504468248869888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1319664134359750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95907831134111300}
+  m_ParameterSendBits: 3
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114648512286073560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,7 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mov: {x: 0, y: 0}
   balaPrefab: {fileID: 1448479249334954, guid: e6b2a48f08355fe46bfb901590337b9f, type: 2}
-  animNet: {fileID: 0}
 --- !u!212 &212107537238593074
 SpriteRenderer:
   m_ObjectHideFlags: 1
