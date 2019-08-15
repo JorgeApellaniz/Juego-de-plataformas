@@ -8,6 +8,7 @@ public class Temporizador : NetworkBehaviour {
 
 	public Text contador;
 	public GameObject[] bonusDisparo;
+	public GameObject[] bolasPinchos;
 
 	[SyncVar]
 	public float tiempo = 60f;
@@ -23,6 +24,7 @@ public class Temporizador : NetworkBehaviour {
 			tiempo -= Time.deltaTime;
 			contador.text = " " + tiempo.ToString ("f0");
 			bonus (tiempo);
+			soltarBolaPinchos (tiempo);
 
 		} else {
 			contador.text = "Tiempo agotado";
@@ -49,5 +51,24 @@ public class Temporizador : NetworkBehaviour {
 		}else {
 			bonusDisparo [2].SetActive (false);
 		}
+	}
+
+	public void soltarBolaPinchos(float tiempo)
+	{
+		try {
+			if (tiempo <= 50 && tiempo >= 40) {
+				bolasPinchos [0].SetActive (true);
+			} 
+			
+			if (tiempo <= 35 && tiempo >= 25) {
+				bolasPinchos [1].SetActive (true);
+			} 
+			
+			if (tiempo <= 20 && tiempo >= 10) {
+				bolasPinchos [2].SetActive (true);
+			}
+		} catch (System.Exception ex) {
+			throw new MissingReferenceException (ex.Message); 
+		} 
 	}
 }

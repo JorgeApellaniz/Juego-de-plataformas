@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61446008535489992}
   m_Layer: 0
   m_Name: SueloMedio
-  m_TagString: plataforma
+  m_TagString: suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,6 +13,7 @@ TagManager:
   - plataforma
   - moneda
   - llave
+  - suelo
   layers:
   - Default
   - TransparentFX
