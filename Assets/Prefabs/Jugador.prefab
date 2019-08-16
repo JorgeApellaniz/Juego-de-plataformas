@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -220,6 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mov: {x: 0, y: 0}
   balaPrefab: {fileID: 1448479249334954, guid: e6b2a48f08355fe46bfb901590337b9f, type: 2}
+  llavePrefab: {fileID: 1850250768801324, guid: ed52da20353864243994212a50a4c521,
+    type: 2}
 --- !u!212 &212107537238593074
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,7 +8,6 @@ public class LogicaJuego : NetworkBehaviour {
 
 	public GameObject[] monedas;
 	public GameObject cerradura;
-	public GameObject llavePrefab;
 	public GameObject cofrePrefab;
 
 	public static LogicaJuego instancia;
@@ -21,6 +20,7 @@ public class LogicaJuego : NetworkBehaviour {
 	public static bool tiempoAgotado;
 	public static bool puerta_completada = false;
 	public static bool puerta_desbloqueada = false;
+	public static bool aparece_llave = false;
 
 
 
@@ -87,9 +87,7 @@ public class LogicaJuego : NetworkBehaviour {
 		//Cuando la puerta esté completada hacemos visible la cerradura y se instancia la llave en una posicion aleatoria
 		if (puerta_completada) {
 			cerradura.SetActive (true);
-			Vector2 posAleatoria_llave = new Vector2 (Random.Range (-14f, 8.5f), Random.Range (-3f, 5.25f));
-			var llave = Instantiate (llavePrefab, posAleatoria_llave, Quaternion.identity);
-			NetworkServer.Spawn (llave);
+			aparece_llave = true;
 			cofrePrefab.SetActive (false);
 			puerta_completada = false;
 		}

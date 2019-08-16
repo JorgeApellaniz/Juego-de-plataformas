@@ -13,23 +13,16 @@ public class movimiento : NetworkBehaviour {
 
 	//Prefab de la bala
 	public GameObject balaPrefab;
+	public GameObject llavePrefab;
 
 	//Variable booleana para comprobar que no se pueda hacer un doble salto
 	public static bool salto = false;
 	public static NetworkInstanceId idNet;
 
-	private Vector3 escalaActual;
-
-	private Vector3 izqScale;
-
-	private Vector3 derScale;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		r2d = GetComponent<Rigidbody2D> ();
-		izqScale = new Vector3 (1, 1, 1);
-		derScale = new Vector3 (-1, 1, 1);
-		escalaActual = gameObject.transform.localScale;
 		tiempoDeDisparo = 5f;
 	}
 		
@@ -39,8 +32,6 @@ public class movimiento : NetworkBehaviour {
 			return;
 		}
 			
-
-		escalaActual = gameObject.transform.localScale;
 
 		if (Input.GetKey (KeyCode.RightArrow) 
 			//&& LogicaJuego.tiempoAgotado == false 
@@ -82,9 +73,18 @@ public class movimiento : NetworkBehaviour {
 		}
 
 		// Para que se compruebe por separado
-		if (Input.GetKeyDown (KeyCode.Space) && LogicaJuego.puede_disparar && LogicaJuego.tiempoAgotado == false && LogicaJuego.nivelCompleto == false) {		
+		if (Input.GetKeyDown (KeyCode.Space) 
+			&& LogicaJuego.puede_disparar 
+			&& LogicaJuego.tiempoAgotado == false 
+			&& LogicaJuego.nivelCompleto == false) {		
 
-			CmdFire (escalaActual);
+			CmdFire ();
+		}
+
+		//Cuando se complete la puerta aparece la llave
+		if (LogicaJuego.aparece_llave) {
+			CmdApareceLlave ();
+			LogicaJuego.aparece_llave = false;
 		}
 
 		if(LogicaJuego.puede_disparar)
@@ -93,28 +93,34 @@ public class movimiento : NetworkBehaviour {
 	}
 
 	[Command]
-	void CmdFire(Vector3 escala)
-	{
-		// This [Command] code is run on the server!
+	void CmdApareceLlave(){
+		
+		Vector2 posAleatoria_llave = new Vector2 (Random.Range (-14f, 8.5f), Random.Range (-3f, 5.25f));
+		GameObject llave = Instantiate (llavePrefab, posAleatoria_llave, Quaternion.identity);
+		NetworkServer.Spawn (llave);
+	}
 
-		// create the bullet object from the bullet prefab
+	[Command]
+	void CmdFire()
+	{
+		int direccion;
+
 		var bullet = (GameObject)Instantiate(
 			balaPrefab,
 			transform.position - transform.forward,
 			Quaternion.identity);
 
-		// make the bullet move away in front of the player
-//		bullet.GetComponent<Rigidbody2D>().velocity = -transform.forward*4;
-		if (escala.x > 0) {
+		direccion = anim.GetInteger ("direccion");
+
+		if (direccion == 0) {
 			bullet.GetComponent<Rigidbody2D> ().AddRelativeForce (new Vector2 (20, 0), ForceMode2D.Impulse);
 		} else {
 			bullet.GetComponent<Rigidbody2D> ().AddRelativeForce (new Vector2 (-20, 0), ForceMode2D.Impulse);
 		}
-
-		// spawn the bullet on the clients
+			
 		NetworkServer.Spawn (bullet);
 
-		// make bullet disappear after 2 seconds
+		// Se destruye la bala pasados 2 segundos
 		Destroy(bullet, 2.0f);        
 	}
 

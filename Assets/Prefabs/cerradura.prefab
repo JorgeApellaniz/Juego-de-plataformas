@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271437538888594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.317603, y: -5.884042, z: 0}
+  m_LocalPosition: {x: -10.19, y: 4.61, z: 0}
   m_LocalScale: {x: 2.3639987, y: 2.3639987, z: 2.3639987}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,6 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puertaFinal: {fileID: 0}
   puertaFinal2: {fileID: 0}
+  puertaFinal_abierta: {fileID: 0}
+  puertaFinal2__abierta: {fileID: 0}
 --- !u!114 &114531421580180168
 MonoBehaviour:
   m_ObjectHideFlags: 1

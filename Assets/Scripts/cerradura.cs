@@ -8,6 +8,9 @@ public class cerradura : NetworkBehaviour {
 	public GameObject puertaFinal;
 	public GameObject puertaFinal2;
 
+	public GameObject puertaFinal_abierta;
+	public GameObject puertaFinal2__abierta;
+
 	private Animator animPuerta1;
 	private Animator animPuerta2;
 
@@ -23,24 +26,11 @@ public class cerradura : NetworkBehaviour {
 				GameObject child = col.transform.GetChild (0).gameObject;
 				if (child.tag.Equals ("llave")) {
 
-					//Componentes animator
-					animPuerta1 = puertaFinal.GetComponent<Animator> ();
-					animPuerta2 = puertaFinal2.GetComponent<Animator> ();
+					puertaFinal.SetActive (false);
+					puertaFinal_abierta.SetActive (true);
 
-					Debug.Log ("Cambiando animación");
-					if (animPuerta1 != null) {
-						Debug.Log ("animPuerta1 distinto null");
-						if (animPuerta1.runtimeAnimatorController != null) {
-							Debug.Log ("animPuerta1 runtime... distinto null");
-							animPuerta1.SetInteger ("hay_llave", 1);
-						}
-					}
-
-					if (animPuerta2 != null) {
-						if (animPuerta2.runtimeAnimatorController != null) {
-							animPuerta2.SetInteger ("hay_llave", 1);
-						}
-					}
+					puertaFinal2.SetActive (false);
+					puertaFinal2__abierta.SetActive (true);
 						
 					Destroy (child);
 					NetworkServer.Destroy (child);
