@@ -1,0 +1,5 @@
+Bibliografia:
+
+https://docs.unity3d.com/es/current/Manual/ExecutionOrder.html - Ciclo de vida unity
+
+https://unity3d.com/es/unity/features/multiplayer - UNET información.
