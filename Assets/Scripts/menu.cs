@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class menu : MonoBehaviour {
 
+	private GameObject lobby;
+
+	void Start(){
+		lobby = GameObject.Find ("LobbyManager");
+	}
+
 	public void comenzar()
 	{
 		SceneManager.LoadScene ("Niveles");
@@ -23,7 +29,7 @@ public class menu : MonoBehaviour {
 	//TODO hacer escena 2
 	public void pasarANivel2()
 	{
-		SceneManager.LoadScene ("Escena2");
+		SceneManager.LoadScene ("Lobby2");
 	}
 		
 
@@ -35,5 +41,11 @@ public class menu : MonoBehaviour {
 	public void volverMenu()
 	{
 		SceneManager.LoadScene ("Menu");
+	}
+
+	public void aNiveles(){
+		Network.Disconnect ();
+		Destroy (lobby);
+		SceneManager.LoadScene ("Niveles");
 	}
 }

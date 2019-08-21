@@ -17,3 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escenas/Escena1.unity
     guid: fb0c88237a406484ab5b2cc756a6e10c
+  - enabled: 1
+    path: Assets/Escenas/Lobby2.unity
+    guid: e52ff3c5f38c6cf468ae2bba61e3c096
+  - enabled: 1
+    path: Assets/Escenas/Escena2.unity
+    guid: da2a91fcbf218124bb73a86d698db7d4

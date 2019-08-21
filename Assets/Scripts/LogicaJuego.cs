@@ -36,6 +36,7 @@ public class LogicaJuego : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		puntuacion = 0;
 		i = 0;
 		j = i + 1;

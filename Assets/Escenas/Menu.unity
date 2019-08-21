@@ -585,7 +585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VIDEOJUEGO DE PLATAFORMAS
+  m_Text: "VIDEOJUEGO COOPERATIVO \nDE PLATAFORMAS 2D"
 --- !u!222 &1243828774
 CanvasRenderer:
   m_ObjectHideFlags: 0

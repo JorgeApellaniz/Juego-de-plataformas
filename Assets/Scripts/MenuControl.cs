@@ -34,5 +34,5 @@ public class MenuControl : MonoBehaviour {
 	public void SalirDelJuego(){
 		Application.Quit ();
 	}
-	
+
 }
