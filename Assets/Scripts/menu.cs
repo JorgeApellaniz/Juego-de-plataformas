@@ -33,11 +33,6 @@ public class menu : MonoBehaviour {
 	}
 		
 
-	public void instrucciones()
-	{
-		SceneManager.LoadScene ("instrucciones");
-	}
-
 	public void volverMenu()
 	{
 		SceneManager.LoadScene ("Menu");
